@@ -399,4 +399,4 @@ FodyWeavers.xsd
 
 # C++ exe
 *.exe
-test.cpp
+test*.cpp
