@@ -50,7 +50,7 @@ void maxHeap::pop()
 
         int index = 0;
 
-        while (index <= max_h.size() / 2 - 1)
+        while (max_h.size() > 1 && index <= max_h.size() / 2 - 1)
         {
             int left = (index + 1) * 2 - 1;
             int right = (index + 1) * 2;

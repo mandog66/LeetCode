@@ -50,7 +50,7 @@ void minHeap::pop()
 
         int index = 0;
 
-        while (index <= min_h.size() / 2 - 1)
+        while (min_h.size() > 1 && index <= min_h.size() / 2 - 1)
         {
             int left = (index + 1) * 2 - 1;
             int right = (index + 1) * 2;
