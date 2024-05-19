@@ -51,4 +51,7 @@ int main(int argc, char *argv[])
 
     nums = {11, 13, 15, 17};
     std::cout << findMin(nums) << std::endl; // 11
+
+    nums = {3, 1};
+    std::cout << findMin(nums) << std::endl; // 1
 }
