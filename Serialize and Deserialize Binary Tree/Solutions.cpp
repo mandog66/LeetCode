@@ -63,6 +63,7 @@ void serializeHelper(std::ostringstream &out, TreeNode *root)
 {
     if (root)
     {
+        // Pre-Order
         out << root->val << ' ';
         serializeHelper(out, root->left);
         serializeHelper(out, root->right);
