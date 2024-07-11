@@ -128,6 +128,28 @@ vector<vector<int>> levelOrder_solution(TreeNode *root)
     return res;
 }
 
+void helper(TreeNode *node, vector<vector<int>> &res, int level)
+{
+    if (!node)
+        return;
+
+    int curLevel = level;
+    if (res.size() < curLevel + 1)
+        res.push_back({node->val});
+    else
+        res[curLevel].push_back(node->val);
+
+    helper(node->left, res, level + 1);
+    helper(node->right, res, level + 1);
+}
+
+vector<vector<int>> levelOrder_recursion(TreeNode *root)
+{
+    vector<vector<int>> res;
+    helper(root, res, 0);
+    return res;
+}
+
 int main(int argc, char *argv[])
 {
     TreeNode *n1 = new TreeNode(1);
@@ -149,6 +171,7 @@ int main(int argc, char *argv[])
     n7->right = n9;
     n9->left = n8;
 
-    std::cout << levelOrder(n6) << std::endl;
-    std::cout << levelOrder_solution(n6) << std::endl;
+    // std::cout << levelOrder(n6) << std::endl;
+    // std::cout << levelOrder_solution(n6) << std::endl;
+    std::cout << levelOrder_recursion(n6) << std::endl;
 }
