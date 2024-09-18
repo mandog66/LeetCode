@@ -12,13 +12,25 @@ struct TreeNode
 
 TreeNode *searchBST(TreeNode *root, int val)
 {
-    if (!root || root->val == val)
-        return root;
+    // if (!root || root->val == val)
+    //     return root;
 
-    if (val > root->val)
-        return searchBST(root->right, val);
-    else
-        return searchBST(root->left, val);
+    // if (val > root->val)
+    //     return searchBST(root->right, val);
+    // else
+    //     return searchBST(root->left, val);
+
+    TreeNode *curr = root;
+
+    while (curr && curr->val != val)
+    {
+        if (val > curr->val)
+            curr = curr->right;
+        else
+            curr = curr->left;
+    }
+
+    return curr;
 }
 
 int main(int argc, char *argv[])
